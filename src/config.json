@@ -32,7 +32,10 @@
         "mdbSass": "sass/mdb/**",
         "mdbCss": "css/mdb/**",
         "gdsSass": "sass/gds/**",
-        "gdsCss": "css/gds/**"
+        "gdsCss": "css/gds/**",
+        "mdbJs": "js/mdb/**",
+        "gdsJs": "js/gds/**",
+        "jquery": "js/jquery/**"
     },
     "temporary":{
         "scriptFolder": "tmp/scripts",

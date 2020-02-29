@@ -148,9 +148,19 @@ function housekeeping()
 function optimiseScripts()
 {'use strict';
   return pipeline(
-      gulp.src(config.processing.scripts),
+      gulp.src(config.processing.mdbJs),
       uglify(),
-      //concat('scripts.js'),
+      concat('mdb.js'),
+      gulp.dest(config.temporary.scriptFolder),
+
+      gulp.src(config.processing.gdsJs),
+      uglify(),
+      concat('gds.js'),
+      gulp.dest(config.temporary.scriptFolder),
+
+      gulp.src(config.processing.jquery),
+      uglify(),
+      concat('jquery.js'),
       gulp.dest(config.temporary.scriptFolder)
     );
 }
@@ -170,12 +180,12 @@ function optimiseStyles()
 {'use strict';
   return pipeline(
       gulp.src(config.processing.mdbCss),
-      //concat('mdbBootstrap.css'),
+      concat('mdbBootstrap.css'),
       cleanCSS(),
       gulp.dest(config.temporary.mdbStylesFolder),
 
       gulp.src(config.processing.gdsCss),
-      //concat('gdsFrontend.css'),
+      concat('gdsFrontend.css'),
       cleanCSS(),
       gulp.dest(config.temporary.gdsStylesFolder)
     );
