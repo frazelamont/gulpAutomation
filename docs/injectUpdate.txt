@@ -1,0 +1,66 @@
+njecting with custom transform function with default fallback
+The default transform function is available to use e.g. as a default fallback.
+
+Used here to inject Word documents as <a> tags below:
+
+index.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My documents</title>
+</head>
+<body>
+  <h1>Documents</h1>
+  <ul>
+    <!-- inject:docx -->
+    <!-- endinject -->
+  </ul>
+  <!-- inject:js -->
+  <!-- endinject -->
+</body>
+</html>
+gulpfile.js:
+
+var inject = require('gulp-inject');
+ 
+gulp.src('./index.html')
+  .pipe(inject(
+    gulp.src(['./*.js', './docs/*.docx'], {read: false}), {
+      transform: function (filepath) {
+        if (filepath.slice(-5) === '.docx') {
+          return '<li><a href="' + filepath + '">' + filepath + '</a></li>';
+        }
+        // Use the default transform as fallback:
+        return inject.transform.apply(inject.transform, arguments);
+      }
+    }
+  ))
+  .pipe(gulp.dest('./'));
+Resulting index.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My documents</title>
+</head>
+<body>
+  <h1>Documents</h1>
+  <ul>
+    <!-- inject:docx -->
+    <li><a href="/docs/document1.docx">/docs/document1.docx</a></li>
+    <li><a href="/docs/document2.docx">/docs/document2.docx</a></li>
+    <!-- endinject -->
+  </ul>
+  <!-- inject:js -->
+  <script src="/lib1.js"></script> 
+  <script src="/lib2.js"></script> 
+  <!-- endinject -->
+</body>
+</html>
+Injecting dist files into bower.json's main section
+Code:
+
+gulp.src('./bower.json')
+  .pipe(inject(gulp.src(['./dist/app.min.js', './dist/app.min.css'], {read: false}), {
+    starttag
