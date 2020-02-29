@@ -1,0 +1,8 @@
+# jscsrc template
+https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json
+
+# jshintrc template
+https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+
+# config variables
+https://medium.com/@baptistelebail/gulp-include-a-json-configuration-file-f1f8ffc2f9f3

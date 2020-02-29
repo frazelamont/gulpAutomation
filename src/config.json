@@ -1,0 +1,60 @@
+{
+    "source" : {
+        "mdbJs": "node_modules/mdbootstrap/js/**/*.js", 
+        "rogueMdbJs": "node_modules/mdbootstrap/js/**/*.min.js",
+        "mdbImg": "node_modules/mdbootstrap/img/**",
+        "mdbSass": "node_modules/mdbootstrap/scss/**/*.scss",
+        "rogueMdbCss": "node_modules/mdbootstrap/scss/**/mdb-lite-free.scss",
+        "gdsSass": "node_modules/govuk-frontend/govuk/**/*.scss",
+        "gdsJs": "node_modules/govuk-frontend/govuk/*.js",
+        "jquery": "node_modules/jquery/dist/**/*.js"
+    },
+    "folder" : {
+        "images": "img", 
+        "dist": "dist",
+        "tmp": "tmp",
+        "styles": "css",
+        "scripts": "js",
+        "mdbSass": "sass/mdb",
+        "mdbJs": "js/mdb",
+        "mdbImg": "img/mdb",
+        "mdbCss": "css/mdb",
+        "gdsSass": "sass/gds",
+        "gdsJs": "js/gds",
+        "gdsCss": "css/gds",
+        "jquery": "js/jquery"
+    },
+    "processing" : {
+        "images": "img/**", 
+        "dist": "dist/**",
+        "scripts": "js/**",
+        "styles": "css/**",
+        "mdbSass": "sass/mdb/**",
+        "mdbCss": "css/mdb/**",
+        "gdsSass": "sass/gds/**",
+        "gdsCss": "css/gds/**"
+    },
+    "temporary":{
+        "scriptFolder": "tmp/scripts",
+        "allScripts": "tmp/scripts/**",
+        "imageFolder": "tmp/images",
+        "allImages": "tmp/images/**",
+        "stylesFolder": "tmp/styles",
+        "gdsStylesFolder": "tmp/styles/gds",
+        "mdbStylesFolder": "tmp/styles/mdb",
+        "allStyles": "tmp/styles/**"
+    },
+    "destination":{
+        "styles": "dist/css",
+        "scripts": "dist/js",
+        "images": "dist/img",
+        "built": "dist/**",
+        "deploy": "../wwwroot/dist"
+    },
+    "build":{
+        "index": "../wwwroot/index.html",
+        "allStyles": "../wwwroot/dist/css/**",
+        "allScripts": "../wwwroot/dist/js/**",
+        "root": "../wwwroot"
+    }
+}

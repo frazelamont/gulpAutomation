@@ -1,0 +1,37 @@
+{
+  "name": "w_fzcrp_uk",
+  "version": "1.0.0",
+  "description": "2020 version of website",
+  "main": "index.js",
+  "dependencies": {
+    "govuk-frontend": "^3.5.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-copy": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "jscs": "^3.0.7",
+    "jshint": "^2.11.0",
+    "mdbootstrap": "^4.13.0",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-image": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-inject": "^5.0.5",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.1",
+    "readable-stream": "^3.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o tmp/compiledCss"
+  },
+  "author": "Fraser Lamont",
+  "license": "ISC"
+}
